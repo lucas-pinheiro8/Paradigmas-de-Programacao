@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-
-// ─────────────────────────────────────────────
-//  Classe Programador
-// ─────────────────────────────────────────────
 class Programador {
     private int id;
     private String nome;
@@ -23,13 +18,7 @@ class Programador {
     }
 }
 
-// ─────────────────────────────────────────────
-//  Classe Projeto
-//
-//  AGREGAÇÃO: O Projeto referencia programadores
-//  que já existem. Um programador pode trabalhar
-//  em vários projetos ao mesmo tempo.
-// ─────────────────────────────────────────────
+
 class Projeto {
     private int id;
     private String nomeProjeto;
@@ -59,9 +48,7 @@ class Projeto {
     }
 }
 
-// ─────────────────────────────────────────────
-//  Main
-// ─────────────────────────────────────────────
+
 public class MainProjeto {
     public static void main(String[] args) {
 
