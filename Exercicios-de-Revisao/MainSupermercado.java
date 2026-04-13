@@ -1,9 +1,3 @@
-import java.util.ArrayList;
-
-// ─────────────────────────────────────────────
-//  AGREGAÇÃO: Produto
-//  Existe no estoque independente de qualquer venda.
-// ─────────────────────────────────────────────
 class Produto {
     private int id;
     private String nome;
@@ -24,10 +18,7 @@ class Produto {
     }
 }
 
-// ─────────────────────────────────────────────
-//  AGREGAÇÃO: Cliente
-//  Existe cadastrado na loja, independente de compras.
-// ─────────────────────────────────────────────
+
 class Cliente {
     private int id;
     private String nome;
@@ -40,14 +31,7 @@ class Cliente {
     public String getNome() { return nome; }
 }
 
-// ─────────────────────────────────────────────
-//  COMPOSIÇÃO: ItemVenda
-//
-//  Um item de venda SÓ EXISTE dentro de uma Venda.
-//  Fora dela, não faz sentido ter um "item" sozinho.
-//
-//  Mas ele AGREGA um Produto (que existe fora).
-// ─────────────────────────────────────────────
+
 class ItemVenda {
     private int id;
     private int quantidade;
@@ -72,13 +56,7 @@ class ItemVenda {
     }
 }
 
-// ─────────────────────────────────────────────
-//  CLASSE "TODO": Venda
-//
-//  • AGREGA um Cliente (existe fora)
-//  • É COMPOSTA por uma lista de ItemVenda
-//    (os itens são criados dentro da Venda)
-// ─────────────────────────────────────────────
+
 class Venda {
     private int id;
     private Cliente cliente;                // AGREGAÇÃO
@@ -105,25 +83,7 @@ class Venda {
         return total;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("========== VENDA #").append(id).append(" ==========\n");
-        sb.append("Cliente: ").append(cliente.getNome()).append("\n");
-        sb.append("------------------------------------\n");
-        for (ItemVenda item : itens) {
-            sb.append(item).append("\n");
-        }
-        sb.append("------------------------------------\n");
-        sb.append(String.format("TOTAL: R$ %.2f\n", calcularTotal()));
-        sb.append("====================================");
-        return sb.toString();
-    }
-}
-
-// ─────────────────────────────────────────────
-//  Main
-// ─────────────────────────────────────────────
+   
 public class MainSupermercado {
     public static void main(String[] args) {
 
