@@ -1,13 +1,3 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-
-// ─────────────────────────────────────────────
-//  Classe Filme — Objeto Independente
-//
-//  AGREGAÇÃO: O Filme existe no catálogo do cinema
-//  independente de estar em cartaz ou não.
-// ─────────────────────────────────────────────
 class Filme {
     private int id;
     private String titulo;
@@ -32,13 +22,7 @@ class Filme {
     }
 }
 
-// ─────────────────────────────────────────────
-//  Classe Ingresso — Objeto "Parte"
-//
-//  COMPOSIÇÃO: Um ingresso só existe dentro de
-//  uma sessão. Se a sessão for cancelada, o
-//  ingresso perde o sentido e deixa de existir.
-// ─────────────────────────────────────────────
+
 class Ingresso {
     private int id;
     private String assento;
@@ -59,12 +43,7 @@ class Ingresso {
     }
 }
 
-// ─────────────────────────────────────────────
-//  Classe Sessao — O "Todo" Principal
-//
-//  • AGREGA um Filme (recebe pronto de fora)
-//  • COMPÕE uma lista de Ingresso (cria internamente)
-// ─────────────────────────────────────────────
+
 class Sessao {
     private int id;
     private LocalDateTime horario;
@@ -95,29 +74,10 @@ class Sessao {
         System.out.println("Ingresso vendido — Assento " + assento + " (" + tipo + ")");
     }
 
-    @Override
-    public String toString() {
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy 'às' HH:mm");
-        StringBuilder sb = new StringBuilder();
-        sb.append("╔══════════════════════════════════════╗\n");
-        sb.append("║         DADOS DA SESSÃO #").append(id).append("            ║\n");
-        sb.append("╠══════════════════════════════════════╣\n");
-        sb.append("  Sala    : ").append(sala).append("\n");
-        sb.append("  Horário : ").append(horario.format(fmt)).append("\n");
-        sb.append("  Filme   : ").append(filme != null ? filme : "Não definido").append("\n");
-        sb.append("  ─────────────────────────────────── \n");
-        sb.append("  Ingressos vendidos (").append(ingressos.size()).append("):\n");
-        for (Ingresso ing : ingressos) {
-            sb.append(ing).append("\n");
-        }
-        sb.append("╚══════════════════════════════════════╝");
-        return sb.toString();
-    }
+  
 }
 
-// ─────────────────────────────────────────────
-//  Classe de Teste: TestaCinema
-// ─────────────────────────────────────────────
+
 public class TestaCinema {
     public static void main(String[] args) {
 
