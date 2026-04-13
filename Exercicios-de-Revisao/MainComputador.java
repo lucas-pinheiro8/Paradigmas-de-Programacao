@@ -1,9 +1,3 @@
-// ─────────────────────────────────────────────
-//  Classe Processador
-//
-//  Objeto "parte" — não faz sentido existir
-//  sozinho fora de um Computador neste sistema.
-// ─────────────────────────────────────────────
 class Processador {
     private String marca;
     private String modelo;
@@ -21,20 +15,7 @@ class Processador {
     }
 }
 
-// ─────────────────────────────────────────────
-//  Classe Computador
-//
-//  COMPOSIÇÃO: O Computador CRIA o Processador
-//  dentro do seu próprio construtor.
-//
-//  Isso significa:
-//  • O processador NÃO pode existir antes do computador
-//  • O processador NÃO existe depois que o computador é destruído
-//  • Não existe referência externa ao processador
-//
-//  Analogia: o processador é SOLDADO na placa-mãe.
-//  Se o computador for destruído, o processador vai junto.
-// ─────────────────────────────────────────────
+
 class Computador {
     private int id;
     private String marca;
@@ -53,13 +34,11 @@ class Computador {
     @Override
     public String toString() {
         return "Computador #" + id + " | Marca: " + marca + "\n"
-             + "  └─ Processador: " + processador;
+             + "   Processador: " + processador;
     }
 }
 
-// ─────────────────────────────────────────────
-//  Main
-// ─────────────────────────────────────────────
+
 public class MainComputador {
     public static void main(String[] args) {
 
