@@ -1,9 +1,3 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
-// ─────────────────────────────────────────────
-//  Classe Leitor
-// ─────────────────────────────────────────────
 class Leitor {
     private int id;
     private String nome;
@@ -17,9 +11,7 @@ class Leitor {
     public String getNome() { return nome; }
 }
 
-// ─────────────────────────────────────────────
-//  Classe Livro
-// ─────────────────────────────────────────────
+
 class Livro {
     private int id;
     private String titulo;
@@ -36,9 +28,7 @@ class Livro {
     public String getAutor() { return autor; }
 }
 
-// ─────────────────────────────────────────────
-//  Classe de Associação: Emprestimo
-// ─────────────────────────────────────────────
+
 class Emprestimo {
 
     private LocalDateTime dataEmprestimo;
@@ -59,18 +49,15 @@ class Emprestimo {
     @Override
     public String toString() {
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return "========== EMPRÉSTIMO ==========\n"
+        return "= EMPRÉSTIMO =\n"
              + "Leitor          : " + leitor.getNome() + "\n"
              + "Livro           : " + livro.getTitulo() + " (" + livro.getAutor() + ")\n"
              + "Data Empréstimo : " + dataEmprestimo.format(fmt) + "\n"
-             + "Devolução Prev. : " + dataDevolucaoPrevista.format(fmt) + "\n"
-             + "================================";
+             + "Devolução Prev. : " + dataDevolucaoPrevista.format(fmt) + "\n";
     }
 }
 
-// ─────────────────────────────────────────────
-//  Main
-// ─────────────────────────────────────────────
+
 public class MainBiblioteca {
     public static void main(String[] args) {
         Leitor leitor = new Leitor(1, "Mariana Lima");
