@@ -1,11 +1,3 @@
-import java.util.ArrayList;
-
-// ─────────────────────────────────────────────
-//  Classe Apartamento
-//
-//  Objeto "parte" — um apartamento sem edifício
-//  não tem sentido de existir neste sistema.
-// ─────────────────────────────────────────────
 class Apartamento {
     private int numero;
     private int andar;
@@ -21,16 +13,7 @@ class Apartamento {
     }
 }
 
-// ─────────────────────────────────────────────
-//  Classe Edificio
-//
-//  COMPOSIÇÃO: O Edifício é o "todo".
-//  Ele cria os apartamentos internamente.
-//  Quem chama o método só passa números primitivos.
-//
-//  Se o Edifício for demolido, os apartamentos
-//  deixam de existir com ele.
-// ─────────────────────────────────────────────
+
 class Edificio {
     private String nome;
     private String endereco;
@@ -43,11 +26,7 @@ class Edificio {
         this.apartamentos = new ArrayList<>();
     }
 
-    /**
-     * COMPOSIÇÃO:
-     * O objeto Apartamento é criado DENTRO deste método.
-     * O usuário externo não precisa criar o Apartamento — só passa os dados.
-     */
+
     public void construirApartamento(int num, int andar) {
         Apartamento apto = new Apartamento(num, andar); // criado internamente!
         apartamentos.add(apto);
@@ -63,9 +42,7 @@ class Edificio {
     }
 }
 
-// ─────────────────────────────────────────────
-//  Main
-// ─────────────────────────────────────────────
+
 public class MainEdificio {
     public static void main(String[] args) {
 
