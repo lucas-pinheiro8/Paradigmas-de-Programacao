@@ -1,8 +1,4 @@
-import java.util.ArrayList;
 
-// ─────────────────────────────────────────────
-//  Classe Atleta
-// ─────────────────────────────────────────────
 class Atleta {
     private int id;
     private String nome;
@@ -23,16 +19,7 @@ class Atleta {
     }
 }
 
-// ─────────────────────────────────────────────
-//  Classe Time
-//
-//  AGREGAÇÃO: O Time "tem" atletas, mas os atletas
-//  não foram CRIADOS pelo Time. Eles existem antes
-//  e podem existir depois do Time ser destruído.
-//
-//  Analogia: o Franca Basquete "agrega" jogadores,
-//  mas se o time fechar, os jogadores continuam vivos!
-// ─────────────────────────────────────────────
+
 class Time {
     private int id;
     private String nome;
@@ -62,9 +49,7 @@ class Time {
     }
 }
 
-// ─────────────────────────────────────────────
-//  Main - PROVA DA AGREGAÇÃO
-// ─────────────────────────────────────────────
+
 public class MainBasquete {
     public static void main(String[] args) {
 
@@ -80,11 +65,8 @@ public class MainBasquete {
 
         francaBasquete.listarElenco();
 
-        // ─────────────────────────────────────────────
-        // PROVA DA AGREGAÇÃO:
-        // Anulamos o objeto Time (simulando destruição)
-        // ─────────────────────────────────────────────
-        System.out.println("\n--- Anulando o objeto 'francaBasquete'... ---");
+      
+        System.out.println("\n--- Anulando o objeto 'francaBasquete' ");
         francaBasquete = null;
 
         // O Time foi "destruído", mas os atletas continuam existindo!
